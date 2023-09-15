@@ -1,28 +1,28 @@
-def busca_binaria_iterativa(lista, aposta):
+def busca_binaria_iterativa(lista, alvo):
     inicio = 0
     fim = len(lista) -1
     
     while inicio <= fim:        
         meio = (inicio + fim) //2
-        if aposta == lista[meio]:
+        if alvo == lista[meio]:
             return lista[meio]
-        elif aposta > lista[meio]:
+        elif alvo > lista[meio]:
             inicio = meio +1
         else:
             fim = meio -1
         print(meio)
 
     return None    
-def busca_binaria_recursiva(lista, aposta, inicio, fim):
+def busca_binaria_recursiva(lista, alvo, inicio, fim):
     if inicio <= fim:
         meio = (inicio + fim) //2
         print(meio)
-        if aposta == lista[meio]:
+        if alvo == lista[meio]:
             return lista[meio]
-        elif aposta > lista[meio]:
-            return busca_binaria_recursiva(lista, aposta, meio +1, fim)
+        elif alvo > lista[meio]:
+            return busca_binaria_recursiva(lista, alvo, meio +1, fim)
         else:
-            return busca_binaria_recursiva(lista, aposta, inicio,meio -1)
+            return busca_binaria_recursiva(lista, alvo, inicio, meio -1)
     else:
         return None    
 
